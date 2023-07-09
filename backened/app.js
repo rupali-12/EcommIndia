@@ -26,13 +26,18 @@ app.use("/api/v1", order);
 app.use("/api/v1", payment);
 
 // code for deployment
-app.use(express.static(path.join(__dirname, "frontend/client/build")));
+// app.use(express.static(path.join(__dirname, "frontend/client/build")));
 
-// Serve the index.html file for any route
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "frontend/client/build/index.html"));
+// // Serve the index.html file for any route
+// app.get("*", (req, res) => {
+//   res.sendFile(path.join(__dirname, "frontend/client/build/index.html"));
+// });
+
+app.use(express.static("frontend/client/build"));
+app.get("*", function (req, res) {
+  // res.sendFile(path.resolve('client', 'build' , 'index.html'));
+  res.sendFile(path.resolve(__dirname, "frontend/client/build", "index.html"));
 });
-
 console.log("dfghj" + __dirname);
 
 // Middleware for errors
