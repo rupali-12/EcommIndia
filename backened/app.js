@@ -4,7 +4,8 @@ const bodyParser = require("body-parser");
 const fileupload = require("express-fileupload");
 const cookieParser = require("cookie-parser");
 const path = require("path");
-import { fileURLToPath } from "url";
+// import { fileURLToPath } from "url";
+const fileURLToPath = require("url");
 const dotenv = require("dotenv");
 dotenv.config({ path: "backened/config/config.env" });
 
@@ -27,7 +28,7 @@ app.use("/api/v1", order);
 app.use("/api/v1", payment);
 
 const __filename = fileURLToPath(import.meta.url);
-const __dirname= path.dirname(__filename);
+const __dirname = path.dirname(__filename);
 
 // code for deployment
 app.use(express.static(path.join(__dirname, "../frontend/build")));
