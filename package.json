@@ -5,8 +5,9 @@
   "main": "backened/server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node backened/server.js",
-    "dev": "nodemon backened.server.js --ignore client"
+    "start": "nodemon backened/server.js",
+    "dev": "concurrently \"npm run dev\" \"npm run start\""
+   
   },
   "author": "",
   "license": "ISC",
