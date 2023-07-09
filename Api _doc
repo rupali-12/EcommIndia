@@ -1,0 +1,18 @@
+For Products
+route "/api/v1"
+product /products (GET)
+product create /product/new (POST)
+required fields :- { name, description, price,category,images{public_id, url} }
+
+For user
+route "/api/v1"
+registerUser /register (POST)
+required fields :-{name, email, password}
+loginUser /login (POST)
+required fields :-{email, password}
+forgotPassword /password/forgot (POST)
+required fields :- { email } // to which we want to send link to reset password
+resetPassword /password/reset/:token (PUT)
+required fields :- { password, confirmPassword } 
+resetPassword /getuserdetails/:id (GET)
+logoutUser /logout (GET)

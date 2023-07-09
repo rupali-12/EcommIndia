@@ -1,0 +1,73 @@
+.aboutSection {
+    height: 100vh;
+    width: 100vw;
+    max-width: 100%;
+    background-color: white;
+    display: grid;
+    grid-template-columns: 4fr 4fr;
+    position: fixed;
+    background-color: rgb(227, 146, 131);
+}
+
+.aboutSectionGradient {
+    background-image: linear-gradient(to bottom right, rgb(78, 81, 255), rgb(74, 137, 189));
+}
+
+.aboutSectionContainer {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 80vw;
+    height: 80vh;
+    background-color: rgb(255, 255, 255);
+    box-shadow: -10px 10px 10px rgba(0, 0, 0, 0.192);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.aboutSectionContainer>h1 {
+    font-size: 3vmax;
+    font-weight: 400;
+    color: tomato;
+    margin: 250px;
+    margin-top: 0;
+    /* Adjusted to remove top margin */
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    /* Updated font family */
+}
+
+.textField {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-top: 2rem;
+}
+
+.textField h1 {
+    font-size: 3vmax;
+    font-weight: 400;
+    color: rgb(232, 65, 35);
+    margin-bottom: 2vmax;
+    margin-top: -230px;
+    font-family: 'Roboto', sans-serif;
+    /* Updated font family */
+}
+
+.textField p {
+    margin: 0.5rem 0;
+    font-size: 22px;
+}
+
+@media screen and (max-width: 600px) {
+    .aboutSectionContainer>h1 {
+        font-size: 5vmax;
+        margin: 3vmax;
+    }
+}
