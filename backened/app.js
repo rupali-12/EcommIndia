@@ -4,7 +4,6 @@ const bodyParser = require("body-parser");
 const fileupload = require("express-fileupload");
 const cookieParser = require("cookie-parser");
 const path = require("path");
-// import { fileURLToPath } from "url";
 const fileURLToPath = require("url");
 const dotenv = require("dotenv");
 dotenv.config({ path: "backened/config/config.env" });
