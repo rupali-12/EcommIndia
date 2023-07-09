@@ -5,7 +5,7 @@
   "main": "backened/server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon backened/server.js",
+    "start": "node backened/server.js",
     "dev": "concurrently \"npm run dev\" \"npm run start\""
    
   },
