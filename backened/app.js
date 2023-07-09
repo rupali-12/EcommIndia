@@ -26,7 +26,7 @@ app.use("/api/v1", user);
 app.use("/api/v1", order);
 app.use("/api/v1", payment);
 
-const __filename = fileURLToPath(import.meta.url);
+__filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 // code for deployment
