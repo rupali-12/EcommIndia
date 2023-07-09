@@ -33,10 +33,10 @@ app.use("/api/v1", payment);
 //   res.sendFile(path.join(__dirname, "frontend/client/build/index.html"));
 // });
 
-app.use(express.static("frontend/client/build"));
+app.use(express.static("frontend/build"));
 app.get("*", function (req, res) {
   // res.sendFile(path.resolve('client', 'build' , 'index.html'));
-  res.sendFile(path.resolve(__dirname, "frontend/client/build", "index.html"));
+  res.sendFile(path.resolve(__dirname, "frontend/build", "index.html"));
 });
 console.log("dfghj" + __dirname);
 
