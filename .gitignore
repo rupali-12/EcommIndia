@@ -4,9 +4,9 @@
 /node_modules
 /.pnp
 .pnp.js
-frontend/src/components/layout/Contact/.envVar.js
-frontend/.empty-module.js
-frontend/.override.js
+frontend/src/components/layout/Contact/envVar.js
+frontend/empty-module.js
+frontend/override.js
 backened/config/.env
 frontend/node_modules/
 
