@@ -26,9 +26,10 @@ app.use("/api/v1", order);
 app.use("/api/v1", payment);
 
 // code for deployment
-app.use(express.static(path.join(__dirname, "../frontend/build")));
-app.get("*", (req, res) => {
-  res.sendFile(path.resolve(__dirname, "../frontend/build/index.html"));
+app.use(express.static("app/client/build"));
+app.get("*", function (req, res) {
+  // res.sendFile(path.resolve('client', 'build' , 'index.html'));
+  res.sendFile(path.resolve(__dirname, "app/client/build", "index.html"));
 });
 console.log("dfghj" + __dirname);
 

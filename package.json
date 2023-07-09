@@ -5,10 +5,11 @@
   "main": "backened/server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node backened/server.js",
-     "frontend": "npm start --prefix frontend",
-     "frontend-install": "npm install --prefix frontend",
-    "dev": "concurrently \"npm run server\" \"npm run frontend\""
+     "start": "node server.js",
+    "server": "nodemon server.js",
+     "client": "npm start --prefix client",
+     "client-install": "npm install --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "author": "",
   "license": "ISC",
