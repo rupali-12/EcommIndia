@@ -5,7 +5,7 @@ const cloudinary = require("cloudinary");
 
 //config
 // dotenv.config({ path: "./config/.env" });   // nodemon server
-dotenv.config({ path: "backened/config/.env" }); // npm run dev
+// dotenv.config({ path: "backened/config/.env" }); // npm run dev
 
 // Handling uncaught Exception
 process.on("uncaughtException", (err) => {

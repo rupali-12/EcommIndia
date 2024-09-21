@@ -24,6 +24,7 @@
     "country-state-city": "^3.1.4",
     "crypto-browserify": "^3.12.0",
     "emailjs-com": "^3.2.0",
+    "frontend": "file:",
     "https-browserify": "^1.0.0",
     "material-ui-slider": "^3.0.8",
     "node-libs-browser": "^2.2.1",
