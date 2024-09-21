@@ -2,6 +2,7 @@ const app = require("./app");
 const dotenv = require("dotenv");
 const connectDB = require("./config/database");
 const cloudinary = require("cloudinary");
+const cors = require("cors");
 
 //config
 // dotenv.config({ path: "./config/.env" });   // nodemon server
@@ -11,6 +12,18 @@ const cloudinary = require("cloudinary");
 process.on("uncaughtException", (err) => {
   console.log(`Error: ${err.message}`);
   console.log("Shutting down the server due to uncaught exception");
+});
+
+app.use(express.static(path.join(__dirname, "frontend/build")));
+
+app.use(
+  cors({
+    origin: "https://ecommindia-rupali-sharma.netlify.app/",
+  })
+);
+
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "frontend/build", "index.html"));
 });
 
 let server;
