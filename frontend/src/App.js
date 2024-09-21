@@ -83,11 +83,6 @@ function App() {
 
         <Route path="/login" element={<LoginSignup />} />
 
-        {/* <Route
-          path="/account"
-          element={<ProtectedRoute Component={Profile} />}
-        /> */}
-
         <Route
           path="/account"
           element={
