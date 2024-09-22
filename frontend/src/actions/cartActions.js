@@ -5,10 +5,11 @@ import {
   SAVE_SHIPPING_INFO,
 } from "../constants/cartConstants";
 import axios from "axios";
+const baseUrl = "https://ecommindia.onrender.com";
 
 // Add to Cart
 export const addItemsToCart = (id, quantity) => async (dispatch, getState) => {
-  const { data } = await axios.get(`/api/v1/product/${id}`);
+  const { data } = await axios.get(`${baseUrl}/api/v1/product/${id}`);
 
   //   console.log(data.data);
   dispatch({
@@ -47,7 +48,7 @@ export const saveShippingInfo = (data) => async (dispatch) => {
   localStorage.setItem("shippingInfo", JSON.stringify(data));
 };
 
-export const emptyCart = () => async (dispatch,getState) => {
+export const emptyCart = () => async (dispatch, getState) => {
   dispatch({ type: EMPTY_CART });
   localStorage.setItem("cartItems", JSON.stringify(getState().cart.cartItems));
 };
