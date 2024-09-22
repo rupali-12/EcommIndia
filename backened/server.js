@@ -1,12 +1,10 @@
+const express = require("express");
 const app = require("./app");
 const dotenv = require("dotenv");
 const connectDB = require("./config/database");
 const cloudinary = require("cloudinary");
 const cors = require("cors");
-
-//config
-// dotenv.config({ path: "./config/.env" });   // nodemon server
-// dotenv.config({ path: "backened/config/.env" }); // npm run dev
+const path = require("path");
 
 // Handling uncaught Exception
 process.on("uncaughtException", (err) => {
@@ -14,18 +12,22 @@ process.on("uncaughtException", (err) => {
   console.log("Shutting down the server due to uncaught exception");
 });
 
-app.use(express.static(path.join(__dirname, "frontend/build")));
-
+// Set up CORS before anything else
 app.use(
   cors({
     origin: "https://ecommindia-rupali-sharma.netlify.app/",
   })
 );
 
+// Serve static files from the React app
+app.use(express.static(path.join(__dirname, "frontend/build")));
+
+// This wildcard route should be after all other routes/middleware
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "frontend/build", "index.html"));
 });
 
+// Initialize Cloudinary config and start the server
 let server;
 const start = async () => {
   try {
@@ -44,10 +46,8 @@ const start = async () => {
 };
 
 start();
-// Database connection
-// connectDB();
 
-// Unhandled error
+// Handle unhandled promise rejections
 process.on("unhandledRejection", (err) => {
   console.log(`Error: ${err.message}`);
   console.log("Shutting down the server due to unhandled promise rejection");
