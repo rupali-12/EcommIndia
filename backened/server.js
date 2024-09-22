@@ -15,7 +15,7 @@ process.on("uncaughtException", (err) => {
 // Set up CORS before anything else
 app.use(
   cors({
-    origin: "https://ecommindia-rupali-sharma.onrender.com",
+    origin: "*",
   })
 );
 
