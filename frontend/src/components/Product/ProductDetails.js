@@ -1,4 +1,5 @@
 import React, { Fragment, useEffect, useState } from "react";
+import Carousel from "react-material-ui-carousel";
 import "./ProductDetails.css";
 import { useSelector, useDispatch } from "react-redux";
 import {
@@ -22,7 +23,7 @@ import { Rating } from "@material-ui/lab";
 import { NEW_REVIEW_RESET } from "../../constants/productConstants";
 import { useParams } from "react-router-dom";
 
-const ProductDetails = () => {
+const ProductDetails = ({}) => {
   const dispatch = useDispatch();
   const alert = useAlert();
   const { id } = useParams();
@@ -110,15 +111,15 @@ const ProductDetails = () => {
           <div className="ProductDetails">
             <div>
               {/* <Carousel> */}
-              {product.images &&
-                product.images.map((item, i) => (
-                  <img
-                    className="CarouselImage"
-                    key={i}
-                    src={item.url}
-                    alt={`${i} Slide`}
-                  />
-                ))}
+                {product.images &&
+                  product.images.map((item, i) => (
+                    <img
+                      className="CarouselImage"
+                      key={i}
+                      src={item.url}
+                      alt={`${i} Slide`}
+                    />
+                  ))}
               {/* </Carousel> */}
             </div>
 

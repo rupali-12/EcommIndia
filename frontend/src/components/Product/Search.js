@@ -8,6 +8,7 @@ const Search = ({ history }) => {
 
   const searchSubmitHandler = (e) => {
     e.preventDefault();
+    // .trim() removes extra space
     navigate(keyword.trim() ? `/products/${keyword}` : "/products");
   };
   return (

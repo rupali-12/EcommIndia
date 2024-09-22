@@ -76,6 +76,7 @@
 
 .doughnutChart {
     width: 30vmax;
+    /* width: 30%; */
     margin: auto;
 }
 
@@ -98,3 +99,6 @@
         font: 300 0.9rem "Roboto";
     }
 }
+/* .greenColor {
+    color: green !important;
+} */
