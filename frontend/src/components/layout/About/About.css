@@ -35,10 +35,8 @@
     color: tomato;
     margin: 250px;
     margin-top: 0;
-    /* Adjusted to remove top margin */
     text-align: center;
     font-family: 'Roboto', sans-serif;
-    /* Updated font family */
 }
 
 .textField {
@@ -57,7 +55,6 @@
     margin-bottom: 2vmax;
     margin-top: -230px;
     font-family: 'Roboto', sans-serif;
-    /* Updated font family */
 }
 
 .textField p {

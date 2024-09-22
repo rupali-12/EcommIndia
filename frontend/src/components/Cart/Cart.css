@@ -104,7 +104,6 @@
 }
 
 .cartGrossProfitBox {
-    /* border-top: 3px solid tomato; */
     border-top: 3px solid #000066;
     margin: 1vmax 4vmax;
     box-sizing: border-box;
@@ -120,7 +119,6 @@
 }
 
 .checkOutBtn>button {
-    /* background-color: tomato; */
     background-color: #000066;
     color: white;
     border: none;

@@ -24,13 +24,6 @@
 }
 
 .CarouselImage {
-    /* width: 20vmax;
-    height: 20vmax;
-    display: flex;
-    margin: auto;
-    flex-direction: column;
-    border: 1px solid red; */
-
     width: 20vmax;
     display: block;
         height: auto;
@@ -158,7 +151,7 @@
 .submitDialog {
     display: flex;
     flex-direction: column;
-} */
+} 
 
 .submitDialogTextArea {
     border: 1px solid rgba(0, 0, 0, 0.082);
