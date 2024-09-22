@@ -15,7 +15,12 @@ process.on("uncaughtException", (err) => {
 // Set up CORS before anything else
 app.use(
   cors({
-    origin: "https://main--ecommindia-rupali-sharma.netlify.app/",
+    origin: [
+      "https://main--ecommindia-rupali-sharma.netlify.app",
+      "https://ecommindia.onrender.com",
+    ],
+    credentials: true, // If you're using cookies for authentication, ensure this is set
+    methods: ["GET", "POST", "PUT", "DELETE"], // Specify allowed HTTP methods
   })
 );
 
