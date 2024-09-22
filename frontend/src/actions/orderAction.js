@@ -21,6 +21,7 @@ import {
 } from "../constants/orderConstants";
 import axios from "axios";
 
+const baseUrl = "https://ecommindia.onrender.com";
 // Create Order
 export const createOrder = (order) => async (dispatch) => {
   try {
@@ -32,7 +33,7 @@ export const createOrder = (order) => async (dispatch) => {
       },
     };
     const { data } = await axios.post(
-      "${baseUrl}/api/v1/order/new",
+      `${baseUrl}/api/v1/order/new`,
       order,
       config
     );
@@ -53,7 +54,7 @@ export const createOrder = (order) => async (dispatch) => {
 export const myOrders = () => async (dispatch) => {
   try {
     dispatch({ type: MY_ORDERS_REQUEST });
-    const { data } = await axios.get("${baseUrl}/api/v1/orders/me");
+    const { data } = await axios.get(`${baseUrl}/api/v1/orders/me`);
     dispatch({ type: MY_ORDERS_SUCCESS, payload: data.orders });
   } catch (error) {
     dispatch({
@@ -85,7 +86,7 @@ export const getOrderDetails = (id) => async (dispatch) => {
 export const getAllOrders = () => async (dispatch) => {
   try {
     dispatch({ type: ALL_ORDERS_REQUEST });
-    const { data } = await axios.get("${baseUrl}/api/v1/admin/orders");
+    const { data } = await axios.get(`${baseUrl}/api/v1/admin/orders`);
     console.log("Order data ", data);
     dispatch({ type: ALL_ORDERS_SUCCESS, payload: data.orders });
   } catch (error) {
@@ -136,7 +137,6 @@ export const deleteOrder = (id) => async (dispatch) => {
     });
   }
 };
-
 
 // clear error
 export const clearErrors = () => async (dispatch) => {
