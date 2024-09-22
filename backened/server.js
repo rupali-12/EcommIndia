@@ -16,12 +16,11 @@ process.on("uncaughtException", (err) => {
 app.use(
   cors({
     origin: [
-      "https://ecomm-india-rupali-sharma.vercel.app/",
-      // "https://main--ecommindia-rupali-sharma.netlify.app",
-      "https://ecommindia.onrender.com",
+      "https://ecommindia.onrender.com", // Backend URL
+      "https://ecomm-india-rupali-sharma.vercel.app", // Vercel frontend URL
     ],
-    credentials: true, // If you're using cookies for authentication, ensure this is set
-    methods: ["GET", "POST", "PUT", "DELETE"], // Specify allowed HTTP methods
+    credentials: true, // This allows cookies to be passed if necessary
+    methods: ["GET", "POST", "PUT", "DELETE"], // Add any additional methods you need
   })
 );
 
