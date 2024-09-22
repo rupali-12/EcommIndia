@@ -15,7 +15,7 @@ process.on("uncaughtException", (err) => {
 // Set up CORS before anything else
 app.use(
   cors({
-    origin: "https://ecomm-india-rupali-sharma.vercel.app/",
+    origin: "https://main--ecommindia-rupali-sharma.netlify.app/",
   })
 );
 
