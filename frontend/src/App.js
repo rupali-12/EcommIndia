@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 // import * as fcl from "@onflow/fcl";
 
 import Header from "./components/layout/Header/Header.js";
-import "./App.css";
 import Footer from "./components/layout/Footer/Footer.js";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import webFont from "webfontloader";

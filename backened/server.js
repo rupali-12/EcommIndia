@@ -20,8 +20,8 @@ process.on("uncaughtException", (err) => {
 app.use(
   cors({
     origin: [
-      "https://your-frontend-domain.com", // Change this to your frontend's deployed URL
-      "https://another-frontend-domain.com", // Add any additional allowed origins
+      "http://localhost:3000", // Change this to your frontend's deployed URL
+      "https://ecommindia.onrender.com", // Add any additional allowed origins
     ],
     credentials: true, // Allow credentials (cookies, authorization headers, etc.)
     methods: ["GET", "POST", "PUT", "DELETE"], // Add other methods as necessary
