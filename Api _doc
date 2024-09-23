@@ -16,3 +16,10 @@ resetPassword /password/reset/:token (PUT)
 required fields :- { password, confirmPassword } 
 resetPassword /getuserdetails/:id (GET)
 logoutUser /logout (GET)
+
+start command: 
+Frontend: npm start
+Backened:  
+// dotenv.config({ path: "./config/.env" });   // nodemon server
+dotenv.config({ path: "backened/config/.env" }); // npm run dev
+

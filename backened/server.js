@@ -6,33 +6,29 @@ const cloudinary = require("cloudinary");
 const cors = require("cors");
 const path = require("path");
 
+// Load environment variables from config file
+dotenv.config({ path: "./config/.env" });
+
 // Handling uncaught Exception
 process.on("uncaughtException", (err) => {
   console.log(`Error: ${err.message}`);
   console.log("Shutting down the server due to uncaught exception");
+  process.exit(1); // Exit the process after handling the error
 });
 
-// Set up CORS before anything else
+// Setup CORS before anything else
 app.use(
   cors({
     origin: [
-      "https://ecommindia.onrender.com", // Backend URL
-      "https://ecomm-india-rupali-sharma.vercel.app", // Vercel frontend URL
+      "https://your-frontend-domain.com", // Change this to your frontend's deployed URL
+      "https://another-frontend-domain.com", // Add any additional allowed origins
     ],
-    credentials: true, // This allows cookies to be passed if necessary
-    methods: ["GET", "POST", "PUT", "DELETE"], // Add any additional methods you need
+    credentials: true, // Allow credentials (cookies, authorization headers, etc.)
+    methods: ["GET", "POST", "PUT", "DELETE"], // Add other methods as necessary
   })
 );
 
-// Serve static files from the React app
-app.use(express.static(path.join(__dirname, "frontend/build")));
-
-// This wildcard route should be after all other routes/middleware
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "frontend/build", "index.html"));
-});
-
-// Initialize Cloudinary config and start the server
+// Connect to the database and initialize Cloudinary
 let server;
 const start = async () => {
   try {
@@ -42,15 +38,26 @@ const start = async () => {
       api_key: process.env.CLOUDINARY_API_KEY,
       api_secret: process.env.CLOUDINARY_API_SECRET,
     });
+
+    // Start the server
     server = app.listen(process.env.PORT, () => {
       console.log(`Server is running on http://localhost:${process.env.PORT}`);
     });
   } catch (err) {
-    console.log("Error in db connection " + err);
+    console.log(`Error in DB connection: ${err.message}`);
+    process.exit(1); // Exit if unable to connect to the database
   }
 };
 
 start();
+
+// Serve static files from the React app
+app.use(express.static(path.join(__dirname, "frontend/build")));
+
+// Catch-all handler to send the React app on any route
+app.get("*", (req, res) => {
+  res.sendFile(path.resolve(__dirname, "frontend", "build", "index.html"));
+});
 
 // Handle unhandled promise rejections
 process.on("unhandledRejection", (err) => {

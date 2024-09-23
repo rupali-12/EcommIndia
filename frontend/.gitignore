@@ -7,7 +7,6 @@
 .webpack.config.js
 .empty-module.js
 .override.js
-/src/components/layout/Contact/.envVar.js
 ../backened/config/.env
 
 # testing

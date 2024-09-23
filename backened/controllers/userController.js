@@ -96,7 +96,6 @@ exports.forgotPassword = catchAsyncErrors(async (req, res, next) => {
   const resetPasswordUrl = `${req.protocol}://${req.get(
     "host"
   )}/api/v1/password/reset/${resetToken}`;
-  // const resetPasswordUrl = `${process.env.FRONTEND_URL}/password/reset/${resetToken}`;
 
   // create message
   const message = `Your password rest token is :-\n\n ${resetPasswordUrl} \n\n If you have not requested this email then please ignore it`;
@@ -245,6 +244,7 @@ exports.updateProfile = catchAsyncErrors(async (req, res, next) => {
 
   if (req.body.avatar !== "") {
     const user = await userModel.findById(req.user.id);
+    console.log(user, "fkcmkdmcskdmd");
 
     const imageId = user.avatar.public_id;
 

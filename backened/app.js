@@ -3,7 +3,6 @@ const app = express();
 const bodyParser = require("body-parser");
 const fileupload = require("express-fileupload");
 const cookieParser = require("cookie-parser");
-const path = require("path");
 const dotenv = require("dotenv");
 dotenv.config({ path: "backened/config/config.env" });
 
@@ -24,12 +23,6 @@ app.use("/api/v1", product);
 app.use("/api/v1", user);
 app.use("/api/v1", order);
 app.use("/api/v1", payment);
-
-// code for deployment
-app.use(express.static(path.join(__dirname, "../frontend/build")));
-app.get("*", (req, res) => {
-  res.sendFile(path.resolve(__dirname, "../frontend/build/index.html"));
-});
 
 // Middleware for errors
 app.use(errorMiddleware);
