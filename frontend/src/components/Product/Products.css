@@ -20,7 +20,6 @@
    margin: 6vmax;
 }
 
-/* inside pagination component , there is ul whose class is pagination and li whose class is page-items  */
 .pagination{
     display: flex;
     justify-content: center;

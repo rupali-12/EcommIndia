@@ -50,7 +50,6 @@ function App() {
 
   async function getStripeApiKey() {
     const { data } = await axios.get("/api/v1/stripeapikey");
-    console.log("DDAAta ", data);
     setStripeApiKey(data.stripeApiKey);
   }
 
@@ -66,7 +65,6 @@ function App() {
 
     getStripeApiKey();
   }, []);
-  console.log("user is", user);
   return (
     <Router>
       <Header />
