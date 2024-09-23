@@ -20,7 +20,7 @@ process.on("uncaughtException", (err) => {
 app.use(
   cors({
     origin: [
-      "https://main--ecommindia-rupali-sharma.netlify.app/", // Change this to your frontend's deployed URL
+      "https://main--ecommindia-rupali-sharma.netlify.app", // Change this to your frontend's deployed URL
       "https://ecommindia.onrender.com", // Add any additional allowed origins
     ],
     credentials: true, // Allow credentials (cookies, authorization headers, etc.)
